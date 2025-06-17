@@ -105,7 +105,6 @@ ax.set_ylabel("Em milhões (R$)")
 ax.set_xlabel("Ano")
 ax.legend()
 ax.grid(True)
-ax.show()
 st.pyplot(fig)
 
 """
