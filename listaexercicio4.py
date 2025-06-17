@@ -30,7 +30,6 @@ st.set_page_config(
 Dica: Utilize `head(len(df))`
 """
 
-!pip install pandas
 
 import pandas as pd
 arquivo = "/content/empresas_dados.csv"
