@@ -98,14 +98,14 @@ df_agrupada2 = df_combinada.groupby("Ano")[["Receita Líquida", "Receita Real"]]
 
 fig, ax = plt.subplots()
 plt.figure(figsize=(10, 6))
-df_agrupada2.plot(df_agrupada2["Ano"], df_agrupada2["Receita Líquida"], label='Receita Líquida', ax=ax)
-df_agrupada2.plot(df_agrupada2["Ano"], df_agrupada2["Receita Real"], label='Receita Real', ax=ax)
-plt.title("Receita Líquida e Receita Real da Empresa ao Longo dos Anos")
-plt.ylabel("Em milhões (R$)")
-plt.xlabel("Ano")
-plt.legend()
-plt.grid(True)
-plt.show()
+df_agrupada2.plot(x= "Ano", y= "Receita Líquida", label='Receita Líquida', ax=ax)
+df_agrupada2.plot(x= "Ano", y= "Receita Real"], label='Receita Real', ax=ax)
+ax.set_title("Receita Líquida e Receita Real da Empresa ao Longo dos Anos")
+ax.set_ylabel("Em milhões (R$)")
+ax.set_xlabel("Ano")
+ax.legend()
+ax.grid(True)
+ax.show()
 st.pyplot(fig)
 
 """
