@@ -69,7 +69,6 @@ st.pyplot(fig)
 - Apresente a df para checar se tudo deu certo
 """
 
-!pip install ipeadatapy
 import ipeadatapy as ip
 
 ip.list_series("IPCA")
