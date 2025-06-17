@@ -28,7 +28,7 @@ st.write("Este projeto tem como objetivo integrar análise de dados contábeis d
 
 
 import pandas as pd
-arquivo = "/content/empresas_dados.csv"
+arquivo = "listaexercicio4.py"
 df = pd.read_csv(arquivo, sep=";")
 st.dataframe(df.head(len(df)))
 
