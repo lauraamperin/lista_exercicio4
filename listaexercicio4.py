@@ -25,7 +25,8 @@ st.set_page_config(
 st.header="Projeto Final – Análise Contábil com Ajuste Econômico",
 st.write="Este projeto tem como objetivo integrar análise de dados contábeis de empresas com indicadores econômicos, utilizando Python, Pandas, Ipeadata e Streamlit."
 
-"""2) Importe os dados do arquivo empresas_dados.csv utilizando pandas e apresente todas as linhas da df (peso: 1,0)
+"""
+2) Importe os dados do arquivo empresas_dados.csv utilizando pandas e apresente todas as linhas da df (peso: 1,0)
 
 Dica: Utilize `head(len(df))`
 """
@@ -36,7 +37,8 @@ arquivo = "/content/empresas_dados.csv"
 df = pd.read_csv(arquivo, sep=";")
 st.dataframe(df.head(len(df)))
 
-"""3) Calcule os indicadores Margem Líquida e ROA e salve como novas coluna da df. Depois apresente os dois indicadores no mesmo gráfico de linhas, agrupado por Ano  (peso: 1,0)
+"""
+3) Calcule os indicadores Margem Líquida e ROA e salve como novas coluna da df. Depois apresente os dois indicadores no mesmo gráfico de linhas, agrupado por Ano  (peso: 1,0)
 
 - Margem Líquida = Lucro Líquido / Receita Líquida * 100
 - ROA = Lucro Líquido / Ativo Total *  100
@@ -61,7 +63,8 @@ plt.grid(True)
 plt.show()
 st.pyplot(fig)
 
-"""4) Utilize o pacote ipeadatapy e faça busca para encontrar o indicador que traga o IPCA, taxa de variação, em % e anual: (peso: 2,0)
+"""
+4) Utilize o pacote ipeadatapy e faça busca para encontrar o indicador que traga o IPCA, taxa de variação, em % e anual: (peso: 2,0)
 
 - Baixe os dados no período de 2010 a 2024
 - Altere o nome da coluna "YEAR" para "Ano"
@@ -78,7 +81,8 @@ df2 = ip.timeseries("PRECOS_IPCAG", yearGreaterThan= 2009, yearSmallerThan= 2025
 df2.rename(columns={"YEAR": "Ano", "VALUE ((% a.a.))": "IPCA"}, inplace=True)
 st.dataframe(df2)
 
-"""5) Combine as duas df (Excel e IPEA) em uma nova df e calcule nova coluna chamada Receita Real (peso: 2,0)
+"""
+5) Combine as duas df (Excel e IPEA) em uma nova df e calcule nova coluna chamada Receita Real (peso: 2,0)
 
 - Utilize a função `pd.merge()` para unificar as duas df utiilizando a coluna Ano como conexão (chave primária) entre elas
 - Crie nova coluna chamada Receita Real que será o resultado da Receita Líquida de cada ano deduzido o IPCA do ano: `Receita Real = Receitta Líquida - ( Receita Líquida * (IPCA/100) )`
@@ -90,7 +94,9 @@ df_combinada = pd.merge(df, df2, on="Ano")
 df_combinada["Receita Real"] = df_combinada["Receita Líquida"] - (df_combinada["Receita Líquida"] * (df_combinada["IPCA"] / 100))
 st.dataframe(df_combinada)
 
-"""6) Crie gráfico de linha que apresente as variáveis Receita Líquida e Receita Real ao longo dos anos (no mesmo gráfico) (peso: 1,0)"""
+"""
+6) Crie gráfico de linha que apresente as variáveis Receita Líquida e Receita Real ao longo dos anos (no mesmo gráfico) (peso: 1,0)
+"""
 
 import matplotlib.pyplot as plt
 
@@ -108,7 +114,8 @@ plt.grid(True)
 plt.show()
 st.pyplot(fig)
 
-"""7) Faça os ajustes necessários e leve este projeto para a web usando GitHub e Streamlit (peso: 2,0)
+"""
+7) Faça os ajustes necessários e leve este projeto para a web usando GitHub e Streamlit (peso: 2,0)
 
 - Caça os ajustes necessários no projeto para ser publicado no Streamlit
 - Crie novo repositório público no GitHub e leve os arquivos .py e .csv pra lá. Aproveite e crie o arquivo requirements.txt com os pacotes utilizados no projeto
