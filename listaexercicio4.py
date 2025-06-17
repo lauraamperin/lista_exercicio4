@@ -44,7 +44,7 @@ import matplotlib.pyplot as plt
 df["Margem Líquida"] = df["Lucro Líquido"] / df["Receita Líquida"] * 100
 df["ROA"] = df["Lucro Líquido"] / df["Ativo Total"] * 100
 
-df_agrupada = df.groupby("Ano")[["Margem Líquida", "ROA"]].mean()
+df_agrupada = df.groupby("Ano")[["Margem Líquida", "ROA"]].mean().reset_index()
 
 fig, ax = plt.subplots(figsize=(10, 6))
 df_agrupada.plot(x='Ano', y='Margem Líquida', label='Margem Líquida (%)', ax=ax)
