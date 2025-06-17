@@ -25,11 +25,6 @@ st.set_page_config(
 st.header("Projeto Final – Análise Contábil com Ajuste Econômico")
 st.write("Este projeto tem como objetivo integrar análise de dados contábeis de empresas com indicadores econômicos, utilizando Python, Pandas, Ipeadata e Streamlit.")
 
-"""
-2) Importe os dados do arquivo empresas_dados.csv utilizando pandas e apresente todas as linhas da df (peso: 1,0)
-
-Dica: Utilize `head(len(df))`
-"""
 
 
 import pandas as pd
